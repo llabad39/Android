@@ -8,11 +8,48 @@ android:orientation="vertical" >
 <TextView
     android:id="@+id/detailsText"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal|center_vertical"
     android:layout_marginTop="100dip"
+    android:layout_marginBottom="108dip"
     android:text="Carte nulle"
     android:textAppearance="?android:attr/textAppearanceLarge"
-    android:textSize="30dip" />
+    android:textSize="30dip"
+    />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="20dip">
+
+        <Button
+            android:id="@+id/supprimer"
+            android:text="Supprime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/difficile"
+            android:text="Difficile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/bien"
+            android:text="Bien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/parfait"
+            android:text="Parfait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </LinearLayout>

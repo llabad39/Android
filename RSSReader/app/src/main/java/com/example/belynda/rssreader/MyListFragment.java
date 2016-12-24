@@ -9,20 +9,25 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class MyListFragment extends Fragment {
-
+    //est une reference vers l'activité
     private OnItemSelectedListener listener;
 
     @Override
+    //oncreeView l'interface graphique du fragment,
+    // LayoutInflater : construit le fragment à partir d'un layout,
+    // ViewGroup : dans lequel on place le fragment utilisé
+    //SaveinstanceStatesi le fragment est reconstruit Bundle contient les
+    //informations pour reconstruire l'état de Fragment
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_rsslist_overview,
                 container, false);
-        Button button = (Button) view.findViewById(R.id.button1);
+        final Button button = (Button) view.findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateDetail();
-            }
+                updateDetail("button1");}
         });
         return view;
     }
@@ -32,6 +37,7 @@ public class MyListFragment extends Fragment {
     }
 
     @Override
+    //cree l'attachement entre l'activity et le fragment
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         if (activity instanceof OnItemSelectedListener) {
@@ -44,10 +50,14 @@ public class MyListFragment extends Fragment {
 
 
     // May also be triggered from the Activity
-    public void updateDetail() {
+    public void updateDetail(String typeBoutonPressé) {
         // create fake data
         // String newTime = String.valueOf(System.currentTimeMillis());
         // Send data to Activity
-        listener.onRssItemSelected("Hello");
+
+        //maintenant dans une cette méthode le fragment peut passer "hello" à l'activité
+        // car l'activité implement l'interface OnItemSelectedLIstener
+        listener.onRssItemSelected(typeBoutonPressé);
     }
+
 }
