@@ -42,5 +42,5 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/button7"
         android:layout_alignStart="@+id/button7"
-        android:textColorLink="?android:attr/textColorSearchUrl" />
+         />
 </RelativeLayout>
