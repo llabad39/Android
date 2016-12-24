@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 
 public class RssfeedActivity extends Activity implements
-        MyListFragment.OnItemSelectedListener {
+        MyListFragment.OnItemSelectedListener  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +17,11 @@ public class RssfeedActivity extends Activity implements
     @Override
     public void onRssItemSelected(String link) {
         //Ajout du fragment de manière statique
-        DetailFragment fragment = (DetailFragment) getFragmentManager()
-                .findFragmentById(R.id.detailFragment);
+       DetailFragment fragment = (DetailFragment) getFragmentManager()
+              .findFragmentById(R.id.detailFragment);
+
         if (fragment != null && fragment.isInLayout()) {
+            //**********************  cas ou onn est en paysage ********************/////
             fragment.setText(link);
         } else {
             Intent intent = new Intent(getApplicationContext(),
@@ -28,5 +30,6 @@ public class RssfeedActivity extends Activity implements
             startActivity(intent);
         }
     }
+
 
 }

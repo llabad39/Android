@@ -1,11 +1,12 @@
 package com.example.belynda.rssreader;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class DetailActivity extends Activity {
+public class DetailActivity extends Activity implements DetailFragment.OnFragmentInteractionListener{
 
     public static final String EXTRA_URL = "url";
 
@@ -24,7 +25,12 @@ public class DetailActivity extends Activity {
         if (extras != null) {
             String s = extras.getString(EXTRA_URL);
             TextView view = (TextView) findViewById(R.id.detailsText);
+            //afficher contenu carte
             view.setText(s);
+
         }
     }
+    public void onFragmentInteraction(String link) {
+    }
+
 }
