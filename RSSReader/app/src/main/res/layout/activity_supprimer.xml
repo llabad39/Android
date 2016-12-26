@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_supprimer"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.belynda.rssreader.SupprimerActivity">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal|center_vertical"
+    android:layout_marginBottom="30dip"
+    android:layout_marginTop="30dip"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dip"
+        android:layout_gravity="center_horizontal|center_vertical">
+
+
+
+
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dip"
+        android:layout_gravity="center_horizontal|center_vertical">
+        <TextView
+            android:id="@+id/SupprimerCarte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supprimer une carte "
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="5dip"
+            android:layout_marginRight="5dip"
+            android:textSize="15dip"
+            android:textStyle="italic"
+            />
+        <RadioButton
+            android:id="@+id/suppCarte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="0dip"
+            android:onClick="onRadioButtonClicked"
+            />
+
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dip"
+        android:layout_gravity="center_horizontal|center_vertical">
+        <TextView
+            android:id="@+id/SupprimerJeu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supprimer un jeu "
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="5dip"
+            android:layout_marginRight="5dip"
+            android:textSize="15dip"
+            android:textStyle="italic"
+            />
+        <RadioButton
+            android:id="@+id/supprimerJeu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="0dip"
+            android:onClick="onRadioButtonClicked"
+            />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:text="OK"
+        android:layout_marginBottom="15dip"
+
+        />
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="0dip"
+        android:layout_marginLeft="7dip"
+        android:layout_marginRight="7dip"
+        android:src="@drawable/corbeille"
+        />
+
+
+</LinearLayout>
+
+</LinearLayout>

@@ -1,72 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.belynda.rssreader.CreeJeuxActivity"
+    android:id="@+id/activity_creer_jeu"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+        >
 
-    <LinearLayout android:layout_width="fill_parent"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginBottom="50dip"
+        android:layout_marginTop="50dip"
         >
-
-        <TextView
-            android:id="@+id/bienvenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="20dip"
-            android:layout_marginBottom="30dip"
-            android:text="Bienvenue"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="40dip"
-            android:textStyle="italic"/>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="50dip"
             android:layout_gravity="center_horizontal|center_vertical">
 
-            <Button
-                android:id="@+id/creerJeu"
+            <TextView
+                android:id="@+id/Nom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Créer un jeu"
+                android:text="Nom du jeux : "
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginBottom="20dip"
                 android:layout_marginTop="10dip"
-                android:onClick="onClick"/>
-            <Button
-                android:id="@+id/jouer"
+                android:layout_marginRight="5dip"
+                android:textSize="15dip"
+                android:textStyle="italic"
+                />
+            <EditText
+                android:id="@+id/nomJeux"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:text="Jouer"
+                android:text="Anglais facile"
                 android:layout_marginBottom="20dip"
                 android:layout_marginTop="10dip"
-                android:onClick="onClick"/>
-            <Button
-                android:id="@+id/supprimerMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:text="Supprimer"
-                android:layout_marginBottom="20dip"
-                android:layout_marginTop="10dip"
-                android:onClick="onClick"/>
+           />
+
         </LinearLayout>
 
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="OK"
+
+            />
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginBottom="20dip"
-            android:layout_marginTop="30dip"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="0dip"
             android:layout_marginLeft="7dip"
             android:layout_marginRight="7dip"
-            android:src="@drawable/pgt"
+            android:src="@drawable/carnet"
             />
-    </LinearLayout>
+
+</LinearLayout>
+
 </LinearLayout>
