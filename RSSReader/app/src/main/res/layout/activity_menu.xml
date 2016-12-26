@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-<<<<<<< HEAD
     android:layout_height="match_parent">
 
     <LinearLayout android:layout_width="fill_parent"
@@ -69,52 +68,5 @@
             android:layout_marginRight="7dip"
             android:src="@drawable/pgt"
             />
-
-
-
     </LinearLayout>
-
-</LinearLayout>
-=======
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/elephant2"
-    >
-
-    <Button
-        android:text="supprimer jeu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
-        android:id="@+id/button8"
-        android:layout_below="@+id/button7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp" />
-
-    <Button
-        android:text="Jouer "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:id="@+id/button7"
-        android:layout_below="@+id/button9"
-        android:layout_alignLeft="@+id/button8"
-        android:layout_alignStart="@+id/button8" />
-
-    <Button
-        android:text="Creer un jeu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button9"
-        android:layout_marginTop="31dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/button7"
-        android:layout_alignStart="@+id/button7"
-         />
-</RelativeLayout>
->>>>>>> cb078277a75cb542caf5f6a5eead7398b82a3576
+    </LinearLayout>
