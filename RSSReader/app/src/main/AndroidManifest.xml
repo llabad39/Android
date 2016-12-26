@@ -15,7 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".Jouer" />
+        <activity android:name=".JeuExistantActivity" />
+        <activity android:name=".CreerActivity" />
+        <activity android:name=".CreeJeuxActivity" />
+        <activity android:name=".CreerCarteActivity" />
+        <activity android:name=".SupprimerActivity"></activity>
     </application>
 
 </manifest>
