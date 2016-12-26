@@ -6,7 +6,12 @@ import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
+import java.util.Date;
+
+import java.text.DateFormat;
+import java.util.Locale;
 
 public class FlashCardContentProvider extends ContentProvider {
     private static final String authority = "com.cours.proj.flashcardcontentprovider";
@@ -117,7 +122,17 @@ public class FlashCardContentProvider extends ContentProvider {
     @Override
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
-        // TODO: Implement this to handle requests to update one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        SQLiteDatabase dr = bf.getWritableDatabase();
+        int ident = matcher.match(uri);
+        int retour;
+        switch (ident) {
+            case CARD:
+                retour = dr.update("card_table",values,selection,selectionArgs);
+                break;
+            default:
+                throw new UnsupportedOperationException("Not yet implemented");
+
+        }
+        return retour;
     }
 }
