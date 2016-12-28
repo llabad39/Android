@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class AccessData {
     ContentResolver cr;
-    private static final String authority= "com.cours.proj.flashcardcontentprovider";
+    private static final String authority= "flashcardcontentprovider";
 
     public final static  String TABLE_DECK = "deck_table";
     public final static  String TABLE_CARD = "card_table";
@@ -88,11 +88,13 @@ public class AccessData {
 
         }
     }
-    public ArrayList<Card> getTheHardes(int id, int nbr){
+
+
+    public ArrayList<Card> getTheHardestOldest(int id, int nbr){
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("content").authority(authority).appendPath(TABLE_CARD);
         Uri uri = builder.build();
-        Cursor c = cr.query(uri,new String[]{COLONNE_IDCARD,COLONNE_QUESTION,COLONNE_REPONSE},null,null,COLONNE_DIFF + " DESC");
+        Cursor c = cr.query(uri,new String[]{COLONNE_IDCARD,COLONNE_QUESTION,COLONNE_REPONSE},COLONNE_IDDECK+"=?",new String[]{Integer.toString(id)},COLONNE_DATE+ " ,"+COLONNE_DIFF + " DESC");
         if(c.moveToFirst()){
 
             int acc = 0;
@@ -107,9 +109,7 @@ public class AccessData {
             throw new UnsupportedOperationException("No card in this deck");
     }
 
-    public CursorLoader getTheOldest(int id,int nbr){
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
+
 
     public void update(int id,ContentValues cv){
         Uri.Builder builder = new Uri.Builder();
@@ -124,4 +124,22 @@ public class AccessData {
 
         }
     }
+
+    public void initDeck(){
+        ContentValues cv = new ContentValues();
+        cv.put(COLONNE_TYPEDECK,"informatique");
+        cv.put(COLONNE_MAX,120);
+        insert_deck(cv);
+    }
+
+    public void initCard(){
+        ContentValues cv = new ContentValues();
+        cv.put(COLONNE_IDDECK,1);
+        cv.put(COLONNE_QUESTION,"est ce que sa marche");
+        cv.put(COLONNE_REPONSE,"oui");
+        cv.put(COLONNE_DATE,System.currentTimeMillis());
+        cv.put(COLONNE_DIFF,0);
+        insert_card(cv);
+    }
+
 }

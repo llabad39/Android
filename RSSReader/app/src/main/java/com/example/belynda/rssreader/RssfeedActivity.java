@@ -17,7 +17,9 @@ public class RssfeedActivity extends Activity {
         creer = (Button) findViewById(R.id.creerJeu);
         jouer = (Button) findViewById(R.id.jouer);
         supprimer = (Button) findViewById(R.id.supprimerMenu);// qui se trouve dans le menu
-
+        AccessData ad = new AccessData(getApplicationContext());
+        ad.initDeck();
+        ad.initCard();
     }
 
     public void onClick(View v) {

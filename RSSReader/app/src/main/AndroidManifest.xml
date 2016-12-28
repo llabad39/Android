@@ -21,7 +21,13 @@
         <activity android:name=".CreerActivity" />
         <activity android:name=".CreeJeuxActivity" />
         <activity android:name=".CreerCarteActivity" />
-        <activity android:name=".SupprimerActivity"></activity>
+        <activity android:name=".SupprimerActivity" />
+
+        <provider
+            android:name=".FlashCardContentProvider"
+            android:authorities="flashcardcontentprovider"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>

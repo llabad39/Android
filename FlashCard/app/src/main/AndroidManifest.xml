@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
         <provider
             android:name=".FlashCardContentProvider"
-            android:authorities="com.cours.proj.flashcardcontentprovider"
+            android:authorities="com.cours.proj.flashcard.FlashCardContentProvider"
             android:enabled="true"
             android:exported="true"></provider>
     </application>

@@ -28,7 +28,7 @@ public class BaseFlashCard extends SQLiteOpenHelper{
             COLONNE_TYPEDECK+ " string, "+COLONNE_MAX+ " integer );";
 
     public final static String CREATE_CARD = "create table " + TABLE_CARD + "(" + COLONNE_IDCARD + " integer primary key, " + COLONNE_IDDECK + "integer references " + TABLE_DECK + ", "
-            + COLONNE_QUESTION + " string, " + COLONNE_REPONSE + " string, " + COLONNE_DATE + " DATE "+ COLONNE_DIFF + " integer "
+            + COLONNE_QUESTION + " string, " + COLONNE_REPONSE + " string, " + COLONNE_DATE + " integer "+ COLONNE_DIFF + " integer "
             + COLONNE_MEDIA + " string " +  "CONSTRAINT u_question UNIQUE (" + COLONNE_IDDECK + "," +COLONNE_QUESTION+");";
 
     private static BaseFlashCard instance;

@@ -24,4 +24,5 @@ public class Card {
     public int getId() {
         return id;
     }
+    public void affiche(){System.out.println("question "+question);System.out.println("reponse :"+answer);System.out.println("id :"+id);}
 }
