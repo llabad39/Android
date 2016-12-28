@@ -1,4 +1,4 @@
-package com.cours.proj.flashcard;
+package com.example.belynda.rssreader;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -14,7 +14,7 @@ import java.text.DateFormat;
 import java.util.Locale;
 
 public class FlashCardContentProvider extends ContentProvider {
-    private static final String authority = "com.cours.proj.flashcard.FlashCardContentProvider";
+    private static final String authority = "flashcardcontentprovider";
     private static final int DECK = 1;
     private static final int CARD = 2;
     private static final int ONE_CARD=3;

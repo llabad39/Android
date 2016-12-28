@@ -1,4 +1,4 @@
-package com.cours.proj.flashcard;
+package com.example.belynda.rssreader;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -27,9 +27,9 @@ public class BaseFlashCard extends SQLiteOpenHelper{
     public final static String CREATE_DECK = "create table " + TABLE_DECK + "("+COLONNE_IDDECK+" integer AUTO_INCREMENT PRIMARY KEY, "+
             COLONNE_TYPEDECK+ " string, "+COLONNE_MAX+ " integer );";
 
-    public final static String CREATE_CARD = "create table " + TABLE_CARD + "(" + COLONNE_IDCARD + " integer primary key, " + COLONNE_IDDECK + "integer references " + TABLE_DECK + ", "
-            + COLONNE_QUESTION + " string, " + COLONNE_REPONSE + " string, " + COLONNE_DATE + " integer "+ COLONNE_DIFF + " integer "
-            + COLONNE_MEDIA + " string " +  "CONSTRAINT u_question UNIQUE (" + COLONNE_IDDECK + "," +COLONNE_QUESTION+");";
+    public final static String CREATE_CARD = "create table " + TABLE_CARD + "(" + COLONNE_IDCARD + " integer primary key, " + COLONNE_IDDECK + " integer references " + TABLE_DECK + ", "
+            + COLONNE_QUESTION + " string, " + COLONNE_REPONSE + " string, " + COLONNE_DATE + " integer ,"+ COLONNE_DIFF + " integer ,"
+            + COLONNE_MEDIA + " string ," +  "CONSTRAINT u_question UNIQUE (" + COLONNE_IDDECK + "," +COLONNE_QUESTION+"));";
 
     private static BaseFlashCard instance;
     protected BaseFlashCard(Context context) {
