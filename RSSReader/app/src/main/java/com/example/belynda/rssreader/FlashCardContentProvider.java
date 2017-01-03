@@ -1,4 +1,4 @@
-package com.cours.proj.flashcard;
+package com.example.belynda.rssreader;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -14,7 +14,7 @@ import java.text.DateFormat;
 import java.util.Locale;
 
 public class FlashCardContentProvider extends ContentProvider {
-    private static final String authority = "com.cours.proj.flashcardcontentprovider";
+    private static final String authority = "flashcardcontentprovider";
     private static final int DECK = 1;
     private static final int CARD = 2;
     private static final int ONE_CARD=3;
@@ -43,13 +43,14 @@ public class FlashCardContentProvider extends ContentProvider {
             case ONE_DECK:
                 long idd = ContentUris.parseId(uri);
                 SQLiteDatabase dr = bf.getReadableDatabase();
-                Cursor test = dr.query("card_table",null,"idDeck = " + idd,null,null,null,null);
-                if(test.getCount()==0) {
-                    retour = db.delete("deck_table", "idDeck = " + idd, null);
+                Cursor card = dr.query("card_table",new String[]{"idCard"},"idDeck = " + idd,null,null,null,null);
+                if(card.moveToFirst()) {
+                    do{
+                        db.delete("card_table","idCard = "+card.getInt(card.getColumnIndex("idCard")),null);
+                    }while (card.moveToNext());
 
                 }
-                else
-                    retour = -2;
+                retour = db.delete("deck_table", "idDeck = " + idd, null);
                 dr.close();
                 break;
             default:
@@ -86,7 +87,6 @@ public class FlashCardContentProvider extends ContentProvider {
         }
         builder.authority(authority);
         builder = ContentUris.appendId(builder, id);
-        db.close();
         return builder.build();
     }
 
