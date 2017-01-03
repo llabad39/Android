@@ -28,7 +28,7 @@ android:layout_height="match_parent"
 
         <TextView
             android:id="@+id/Nom"
-            android:layout_width="64dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nom du jeux : "
             android:layout_gravity="center_horizontal|center_vertical"
@@ -36,8 +36,7 @@ android:layout_height="match_parent"
             android:layout_marginTop="5dip"
             android:layout_marginRight="0dip"
             android:textSize="15dip"
-            android:textStyle="italic"
-            android:layout_weight="2.08" />
+            android:textStyle="italic" />
         <Spinner
             android:id="@+id/nomJeux"
             android:layout_width="wrap_content"
@@ -46,7 +45,7 @@ android:layout_height="match_parent"
             android:layout_marginBottom="10dip"
             android:layout_marginTop="10dip"
             android:layout_marginLeft="20dip"
-            />
+            android:layout_weight="1.10" />
 
 
     </LinearLayout>
