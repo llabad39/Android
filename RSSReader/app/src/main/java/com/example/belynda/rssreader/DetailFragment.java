@@ -36,28 +36,28 @@ public class DetailFragment extends Fragment {
         supprimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateDetail("button1");}
+                updateDetail("0");}
         });
 
         final Button difficile = (Button) view.findViewById(R.id.difficile);
         difficile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateDetail("button1");}
+                updateDetail("3");}
         });
 
         final Button bien = (Button) view.findViewById(R.id.bien);
         bien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateDetail("button1");}
+                updateDetail("2");}
         });
 
         final Button parfait = (Button) view.findViewById(R.id.parfait);
         parfait.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateDetail("button1");}
+                updateDetail("1");}
         });
 
         return view;

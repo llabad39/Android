@@ -1,49 +1,46 @@
 package com.example.belynda.rssreader;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class SupprimerActivity extends AppCompatActivity {
-    RadioButton supprimerCarte, supprimerJeu;
+    EditText jeuSupp;
     Button ok ;
-    int test = 0 ;
+    AccessData ad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supprimer);
-        supprimerCarte =(RadioButton) findViewById(R.id.suppCarte);
-        supprimerJeu =(RadioButton) findViewById(R.id.supprimerJeu);
+        jeuSupp =(EditText) findViewById(R.id.nomJeu);
         ok = (Button) findViewById(R.id.ok);
+        ad = new AccessData(getApplicationContext());
     }
 
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.suppCarte:
-                if (checked)
-                    test = 1;
-                    break;
-            case R.id.supprimerJeu:
-                if (checked)
-                    test = 2 ;
-                    break;
+    public  void onClick(View v){
+        String name = jeuSupp.getText().toString();
+        if(name.isEmpty())
+            Toast.makeText(getApplicationContext(),"Remplissez le nom du jeu",Toast.LENGTH_SHORT).show();
+        else{
+            ad.delete_deck(name);
+            Toast.makeText(getApplicationContext(),"Supression réussi",Toast.LENGTH_SHORT).show();
         }
     }
-    public  void onClock(View v){
-        if (v == ok){
-            if(test == 1){
-
-            }else
-                if(test == 2){
-
-                }
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            // When the user center presses, let them pick a contact.
+            Intent intent = new Intent(getApplicationContext(),
+                    RssfeedActivity.class);
+            startActivity(intent);
         }
+        return false;
     }
 }

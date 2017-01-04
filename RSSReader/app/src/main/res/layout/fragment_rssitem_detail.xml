@@ -13,7 +13,7 @@ android:orientation="vertical"
     android:layout_gravity="center_horizontal|center_vertical"
     android:layout_marginTop="120dip"
     android:layout_marginBottom="108dip"
-    android:text="Carte nulle"
+    android:text="Répondez à la question"
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:textSize="20dip"
     />

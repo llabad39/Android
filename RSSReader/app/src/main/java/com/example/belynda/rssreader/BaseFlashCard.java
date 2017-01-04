@@ -10,7 +10,7 @@ import android.util.Log;
  */
 public class BaseFlashCard extends SQLiteOpenHelper{
 
-    public final static int Version = 1;
+    public final static int Version = 3;
     public final static String DB_NAME="base_flashcard";
     public final static  String TABLE_DECK = "deck_table";
     public final static  String TABLE_CARD = "card_table";
@@ -25,11 +25,11 @@ public class BaseFlashCard extends SQLiteOpenHelper{
     public final static String COLONNE_MEDIA = "media";
 
     public final static String CREATE_DECK = "create table " + TABLE_DECK + "("+COLONNE_IDDECK+" integer AUTO_INCREMENT PRIMARY KEY, "+
-            COLONNE_TYPEDECK+ " string, "+COLONNE_MAX+ " integer );";
+            COLONNE_TYPEDECK+ " string UNIQUE);";
 
-    public final static String CREATE_CARD = "create table " + TABLE_CARD + "(" + COLONNE_IDCARD + " integer primary key, " + COLONNE_IDDECK + " integer references " + TABLE_DECK + ", "
+    public final static String CREATE_CARD = "create table " + TABLE_CARD + "(" + COLONNE_IDCARD + " integer primary key, " + COLONNE_TYPEDECK + " integer references " + TABLE_DECK + ", "
             + COLONNE_QUESTION + " string, " + COLONNE_REPONSE + " string, " + COLONNE_DATE + " integer ,"+ COLONNE_DIFF + " integer ,"
-            + COLONNE_MEDIA + " string ," +  "CONSTRAINT u_question UNIQUE (" + COLONNE_IDDECK + "," +COLONNE_QUESTION+"));";
+            + COLONNE_MEDIA + " string ," +  "CONSTRAINT u_question UNIQUE (" + COLONNE_TYPEDECK + "," +COLONNE_QUESTION+"));";
 
     private static BaseFlashCard instance;
     protected BaseFlashCard(Context context) {

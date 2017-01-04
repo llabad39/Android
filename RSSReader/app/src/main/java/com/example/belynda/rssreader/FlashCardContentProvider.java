@@ -8,6 +8,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
+import android.util.Log;
+
 import java.util.Date;
 
 import java.text.DateFormat;
@@ -25,7 +27,7 @@ public class FlashCardContentProvider extends ContentProvider {
         matcher.addURI(authority, "deck_table", DECK);
         matcher.addURI(authority, "card_table", CARD);
         matcher.addURI(authority, "card/#", ONE_CARD);
-        matcher.addURI(authority, "deck/#",ONE_DECK);
+        matcher.addURI(authority, "deck/*",ONE_DECK);
     }
     public FlashCardContentProvider() {
     }
@@ -41,16 +43,18 @@ public class FlashCardContentProvider extends ContentProvider {
                 retour =db.delete("card_table","idCard = "+idc,null);
                 break;
             case ONE_DECK:
-                long idd = ContentUris.parseId(uri);
+                String name = uri.getLastPathSegment();
                 SQLiteDatabase dr = bf.getReadableDatabase();
-                Cursor card = dr.query("card_table",new String[]{"idCard"},"idDeck = " + idd,null,null,null,null);
-                if(card.moveToFirst()) {
+                //Cursor my_deck = dr.query("deck_table",new String[]{"idDeck"},"typeDeck = ?",new String[]{name},null,null,null,null);
+                //my_deck.moveToFirst();
+                //Cursor card = dr.query("card_table",new String[]{"idCard"},"idDeck = ?" ,new String[]{Integer.toString(my_deck.getInt(my_deck.getColumnIndex("idDeck")))},null,null,null);
+                /*if(card.moveToFirst()) {
                     do{
                         db.delete("card_table","idCard = "+card.getInt(card.getColumnIndex("idCard")),null);
                     }while (card.moveToNext());
-
-                }
-                retour = db.delete("deck_table", "idDeck = " + idd, null);
+                }*/
+                retour = db.delete("deck_table", "typeDeck = ?" , new String[]{name});
+                Log.d("retour :", ""+retour);
                 dr.close();
                 break;
             default:
@@ -76,11 +80,9 @@ public class FlashCardContentProvider extends ContentProvider {
         switch (ident) {
             case CARD:
                 id = db.insert("card_table",null,values);
-                builder.appendPath("card_table");
                 break;
             case DECK:
                 id = db.insert("deck_table",null,values);
-                builder.appendPath("deck_table");
                 break;
             default:
                 throw new UnsupportedOperationException("Not yet implemented");
@@ -115,8 +117,10 @@ public class FlashCardContentProvider extends ContentProvider {
                 long idc = ContentUris.parseId(uri);
                 c = dr.query("card_table",new String[]{"question", "reponse"},"idCard = " + idc,selectionArgs,null,null,sortOrder);
                 break;
+            default:
+                throw new UnsupportedOperationException("Not yet implemented");
         }
-        throw new UnsupportedOperationException("Not yet implemented");
+    return c;
     }
 
     @Override
@@ -126,8 +130,9 @@ public class FlashCardContentProvider extends ContentProvider {
         int ident = matcher.match(uri);
         int retour;
         switch (ident) {
-            case CARD:
-                retour = dr.update("card_table",values,selection,selectionArgs);
+            case ONE_CARD:
+                long idc = ContentUris.parseId(uri);
+                retour = dr.update("card_table",values,"idCard = ?",new String[]{String.valueOf(idc)});
                 break;
             default:
                 throw new UnsupportedOperationException("Not yet implemented");

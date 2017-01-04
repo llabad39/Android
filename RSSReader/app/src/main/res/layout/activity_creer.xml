@@ -17,13 +17,63 @@
         android:layout_marginBottom="50dip"
         android:layout_marginTop="50dip"
         >
-
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="50dip"
+            android:layout_marginTop="5dip"
+            android:layout_marginLeft="5dip">
+            <TextView
+                android:id="@+id/urlIntro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="1dip"
+                android:textSize="10dip"
+                android:text="url :"
+                android:textStyle="italic"
+                />
+            <EditText
+                android:id="@+id/url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                />
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_gravity="center_horizontal|center_vertical">
+
+
+        <Button
+            android:id="@+id/téléchargezJeux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chargez"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="20dip"
+            android:layout_marginTop="10dip"
+            android:onClick="loadData"/>
+        <Button
+            android:id="@+id/InsererJeux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inserer"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="20dip"
+            android:layout_marginTop="10dip"
+            android:onClick="insertInDataBase"/>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dip"
+            android:layout_gravity="center_horizontal|center_vertical">
+
 
             <Button
                 android:id="@+id/creerJeux"

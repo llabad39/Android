@@ -42,8 +42,8 @@ android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginBottom="10dip"
-            android:layout_marginTop="10dip"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
             android:layout_marginLeft="20dip"
             android:layout_weight="1.10" />
 
@@ -53,7 +53,7 @@ android:layout_height="match_parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dip"
+        android:layout_marginTop="5dip"
         android:layout_gravity="center_horizontal|center_vertical">
         <TextView
             android:id="@+id/Question"
@@ -61,7 +61,7 @@ android:layout_height="match_parent"
             android:layout_height="wrap_content"
             android:text="Question : "
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginBottom="10dip"
+            android:layout_marginBottom="6dip"
             android:layout_marginTop="5dip"
             android:layout_marginRight="5dip"
             android:textSize="15dip"
@@ -72,7 +72,6 @@ android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:text="ma question ?: "
             android:layout_marginBottom="5dip"
             android:layout_marginTop="5dip"
             />
@@ -82,18 +81,18 @@ android:layout_height="match_parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dip"
+        android:layout_marginTop="5dip"
         android:layout_gravity="center_horizontal|center_vertical">
         <TextView
             android:id="@+id/Réponse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Réponse : "
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginBottom="10dip"
             android:layout_marginTop="5dip"
             android:layout_marginRight="5dip"
             android:textSize="15dip"
+            android:text="Réponse :"
             android:textStyle="italic"
             />
         <EditText
@@ -101,17 +100,53 @@ android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:text="bonne réponse "
             android:layout_marginBottom="5dip"
             android:layout_marginTop="5dip"
             />
-
     </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:id="@+id/diff"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dip"
+        android:layout_gravity="center_horizontal|center_vertical"
+        >
+
+        <RadioButton
+            android:id="@+id/diff1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginLeft="40dip"
+
+            android:text="Facile" />
+
+        <RadioButton
+            android:id="@+id/diff2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:text="Moyen" />
+
+        <RadioButton
+            android:id="@+id/diff3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="Difficile" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
+        android:onClick="ajout"
         android:text="OK"
 
         />

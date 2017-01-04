@@ -27,33 +27,15 @@ tools:context="com.example.belynda.rssreader.SupprimerActivity">
 
 
     </LinearLayout>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dip"
         android:layout_gravity="center_horizontal|center_vertical">
-        <TextView
-            android:id="@+id/SupprimerCarte"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Supprimer une carte "
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginBottom="10dip"
-            android:layout_marginTop="5dip"
-            android:layout_marginRight="5dip"
-            android:textSize="15dip"
-            android:textStyle="italic"
-            />
-        <RadioButton
-            android:id="@+id/suppCarte"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginBottom="5dip"
-            android:layout_marginTop="0dip"
-            android:onClick="onRadioButtonClicked"
-            />
+
+
 
     </LinearLayout>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -62,27 +44,29 @@ tools:context="com.example.belynda.rssreader.SupprimerActivity">
         android:orientation="horizontal"
         android:layout_marginTop="10dip"
         android:layout_gravity="center_horizontal|center_vertical">
+
         <TextView
-            android:id="@+id/SupprimerJeu"
+            android:id="@+id/Nom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Supprimer un jeu "
+            android:text="Nom du jeux à supprimer : "
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginBottom="10dip"
-            android:layout_marginTop="5dip"
+            android:layout_marginBottom="20dip"
+            android:layout_marginTop="10dip"
             android:layout_marginRight="5dip"
             android:textSize="15dip"
             android:textStyle="italic"
             />
-        <RadioButton
-            android:id="@+id/supprimerJeu"
+        <EditText
+            android:id="@+id/nomJeu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginBottom="5dip"
-            android:layout_marginTop="0dip"
-            android:onClick="onRadioButtonClicked"
+            android:layout_marginBottom="20dip"
+            android:layout_marginTop="10dip"
             />
+
+
 
     </LinearLayout>
     <Button
@@ -91,6 +75,7 @@ tools:context="com.example.belynda.rssreader.SupprimerActivity">
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
         android:text="OK"
+        android:onClick="onClick"
         android:layout_marginBottom="15dip"
 
         />

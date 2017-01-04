@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MyListFragment extends Fragment {
     //est une reference vers l'activité
     private OnItemSelectedListener listener;
+    TextView card;
 
     @Override
     //oncreeView l'interface graphique du fragment,
@@ -23,12 +25,7 @@ public class MyListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_rsslist_overview,
                 container, false);
-        final Button button = (Button) view.findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateDetail("button1");}
-        });
+
         return view;
     }
 

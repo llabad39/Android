@@ -1,5 +1,6 @@
 package com.example.belynda.rssreader;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,30 +12,38 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class CreeJeuxActivity extends AppCompatActivity {
-    EditText NomJeux;
+    EditText nomJeux;
     Button ok ;
+    AccessData ad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cree_jeux);
 
-        NomJeux= (EditText) findViewById(R.id.nomJeux);
+        ad = new AccessData(getApplicationContext());
+        nomJeux= (EditText) findViewById(R.id.nomJeux);
         ok = (Button) findViewById(R.id.ok);
        // NomJeux.setText(savedInstanceState.getString("nom"));
        // savedInstanceState.putString("nomjeux", NomJeux.getText().toString());
     }
-   /* public void onClick(View v,Bundle save) {
-        String chaine = NomJeux.getText().toString();
 
-        //Pour voir la valeur que j'ai récupérée
-       final int essai = Log.v("Essai", chaine);
+    public void onClick(View v) {
+        String chaine = nomJeux.getText().toString();
+        if(!chaine.isEmpty()){
+            ContentValues cv = new ContentValues();
+            cv.put(ad.COLONNE_TYPEDECK,chaine);
+            try {
+                ad.insert_deck(cv);
+                Toast toast = Toast.makeText(getApplicationContext(),"Insertion réussi",Toast.LENGTH_SHORT);
+                toast.show();
+                nomJeux.setText("");
+            }
+            catch(Exception e){
+                Log.d("ajout deck","ne peut ajouter votre deck");
+                Toast toast = Toast.makeText(getApplicationContext(),"Insertion echoué",Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        }
 
-        Context context = getApplicationContext();
-        CharSequence text = "Votre jeux a été créé avec succès ";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
-    }*/
+    }
 }
